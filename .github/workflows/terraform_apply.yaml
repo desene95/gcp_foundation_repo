@@ -38,5 +38,9 @@ jobs:
       - name: Terraform Init
         run: terraform init -input=false
 
+      - name: Import VPC-SC
+        run: terraform import google_access_context_manager_service_perimeter.my_perimeter "accessPolicies/299155975207/servicePerimeters/my_perimeter"
+
+
       - name: Terraform Apply
         run: terraform apply -auto-approve -input=false
